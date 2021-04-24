@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
+import { getSmallImage } from "../util";
 
 const GameDetail = () => {
   const { game, screenshots, isLoading } = useSelector((state) => state.detail);
@@ -37,14 +38,21 @@ const GameDetail = () => {
               </Info>
             </Status>
             <Media>
-              <img src={game.background_image} alt={game.name} />
+              <img
+                src={getSmallImage(game.background_image, 1280)}
+                alt={game.name}
+              />
             </Media>
             <Description>
               <p>{game.description_raw}</p>
             </Description>
             <Gallery>
               {screenshots.results.map((ss) => (
-                <img src={ss.image} key={ss.id} alt={game.name} />
+                <img
+                  src={getSmallImage(ss.image, 1280)}
+                  key={ss.id}
+                  alt={game.name}
+                />
               ))}
             </Gallery>
           </Detail>
@@ -58,7 +66,7 @@ const CardShadow = styled(motion.div)`
   width: 100%;
   overflow-y: scroll;
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
@@ -79,7 +87,7 @@ const CardShadow = styled(motion.div)`
 
 const Detail = styled(motion.div)`
   width: 80%;
-  background: rgba(43, 43, 43, 0.8);
+  background: rgb(56 57 62 / 80%);
   backdrop-filter: blur(500px);
   padding: 2rem 5rem;
   position: absolute;

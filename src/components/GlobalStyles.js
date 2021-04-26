@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #F83554;
+            background-color: #ff7474;
         }
 
         &::-webkit-scrollbar-track {
@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
         font-weight: lighter;
         letter-spacing: 0.1rem;
         word-spacing: 0.5rem;
-        color: #F83554;
+        color: #ff7474;
     }
 
     h3 {
@@ -58,6 +58,11 @@ const GlobalStyles = createGlobalStyle`
 
     img {
         display: block;
+    }
+
+    input {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
     }
 `;
 
